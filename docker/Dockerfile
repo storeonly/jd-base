@@ -1,6 +1,6 @@
 FROM node:lts-alpine
-LABEL maintainer="Evine Deng <evinedeng@foxmail.com>"
-ARG JD_BASE_URL=https://github.com/dockere/jd-base
+LABEL maintainer="none"
+ARG JD_BASE_URL=https://github.com/storeonly/jd-base
 ARG JD_BASE_BRANCH=master
 ARG JD_SCRIPTS_URL=https://gitee.com/lxk0301/jd_scripts
 ARG JD_SCRIPTS_BRANCH=master
