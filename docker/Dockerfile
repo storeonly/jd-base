@@ -25,14 +25,18 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
                              tzdata \
                              perl \
                              openssl \
+                             openssh \
     && rm -rf /var/cache/apk/* \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
+    && mkdir -p /root/.ssh \
+    && chmod 700 /root/.ssh \
+    && cd /root/.ssh \
+    && echo -e $KEY > /root/.ssh/id_rsa \
+    && chmod 600 /root/.ssh/id_rsa \
+    && ssh-keyscan gitee.com > /root/.ssh/known_hosts \
     && git clone -b ${JD_BASE_BRANCH} ${JD_BASE_URL} ${JD_DIR} \
     && cd ${JD_DIR}/panel \
-    && npm install \
-    && git clone -b ${JD_SCRIPTS_BRANCH} ${JD_SCRIPTS_URL} ${JD_DIR}/scripts \
-    && cd ${JD_DIR}/scripts \
     && npm install \
     && npm install -g pm2 \
     && ln -sf ${JD_DIR}/jd.sh /usr/local/bin/jd \
