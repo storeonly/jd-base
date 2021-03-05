@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:15.9.0-alpine3.12
 LABEL maintainer="none"
 ARG JD_BASE_URL=https://github.com/storeonly/jd-base
 ARG JD_BASE_BRANCH=master
