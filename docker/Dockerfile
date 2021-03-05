@@ -2,8 +2,7 @@ FROM node:lts-alpine
 LABEL maintainer="none"
 ARG JD_BASE_URL=https://github.com/storeonly/jd-base
 ARG JD_BASE_BRANCH=master
-ARG JD_SCRIPTS_URL=https://gitee.com/lxk0301/jd_scripts
-ARG JD_SCRIPTS_BRANCH=master
+
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     LANG=zh_CN.UTF-8 \
     SHELL=/bin/bash \
