@@ -325,7 +325,7 @@ fi
 if [ ${ExitStatusShell} -eq 0 ]; then
   echo -e "--------------------------------------------------------------\n"
   [ -f ${ScriptsDir}/package.json ] && PackageListOld=$(cat ${ScriptsDir}/package.json)
-  [ -d ${ScriptsDir}/.git ] && Git_PullScripts || Git_CloneScripts
+##  [ -d ${ScriptsDir}/.git ] && Git_PullScripts || Git_CloneScripts
 fi
 
 ## 执行各函数
